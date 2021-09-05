@@ -1,0 +1,726 @@
+body {
+    padding: 0;
+    margin: 0;
+    color: #707070;
+    font: sans-serif;
+}
+
+.myDivIcon {
+    text-align: center;
+    /* Horizontally center the text (icon) */
+    line-height: 20px;
+    /* Vertically center the text (icon) */
+}
+
+/* Cambiamos el fondo cuando esté en active o hover */
+.container::-webkit-scrollbar-track:hover,
+.container::-webkit-scrollbar-track:active {
+    background: #d4d4d4;
+}
+
+.content-infoColor, .content-info,
+.content-avances, .content-fotografico,
+.content-video, .content-trayecto {
+    padding-top: 0%;
+    float: right !important;
+    overflow-x: hidden;
+    background: white;
+    z-index: 1000;
+    position: fixed;
+    width: 0%;
+    top: 0;
+    height: 100%;
+    -webkit-box-shadow: 3px 3px 19px -4px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: 3px 3px 19px -4px rgba(0, 0, 0, 0.33);
+    box-shadow: 3px 3px 19px -4px rgba(0, 0, 0, 0.33);
+    right: 0%;
+    transition: all 0.5s;
+}
+
+#content-videoPlay {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16/9 ratio */
+    padding-top: 30px;
+    /* IE6 workaround*/
+    height: 0;
+    overflow: hidden;
+}
+
+#content-videoPlay iframe,
+#content-videoPlay object,
+#content-videoPlay embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#content-videoTrayecto {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16/9 ratio */
+    padding-top: 30px;
+    /* IE6 workaround*/
+    height: 0;
+    overflow: hidden;
+}
+
+#content-videoTrayecto iframe,
+#content-videoTrayecto object,
+#content-videoTrayecto embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.image-info {
+    width: 100%;
+    height: 40%;
+    background: #fff;
+}
+
+.titulo-info {
+    margin: 4px 7px;
+    border-bottom: 1px solid #F8F8F8;
+    padding: 4%;
+    margin-top: 26px;
+}
+
+.info {
+    padding: 5%;
+}
+
+.avances {
+    padding: 5%;
+}
+
+.more_info {
+    margin: 5%;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.card-shadow:hover {
+    -webkit-box-shadow: 3px 3px 19px -4px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: 3px 3px 19px -4px rgba(0, 0, 0, 0.33);
+    box-shadow: 3px 3px 19px -4px rgba(0, 0, 0, 0.33);
+    transition: all 0.5s;
+}
+
+.div_close {
+    background: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    height: 44px;
+    width: 100%;
+    z-index: 1;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #D0CFD4
+}
+
+#drawLayer {
+    width: 83%;
+    height: 91%;
+    position: absolute;
+    background-color: #D0CFD4
+}
+
+/**************Who View Your Profile CSS Start Here****************/
+#timeline {
+    list-style: none;
+    position: relative;
+    margin: 50px auto;
+    width: 90%;
+}
+
+#timeline:before {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 2px;
+    background-color: #4997cd;
+    left: 47.5%;
+    margin-left: -1.5px;
+}
+
+#timeline .clearFix {
+    clear: both;
+    height: 0;
+}
+
+#timeline .timeline-badge {
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    font-size: 1.2em;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 47.5%;
+    margin-left: -13px;
+    background-color: #fff;
+    z-index: 6;
+    border-radius: 50%;
+    border: 2px solid #4997cd;
+}
+
+#timeline .timeline-badge span.timeline-balloon-date-day {
+    font-size: 1.4em;
+}
+
+#timeline .timeline-badge span.timeline-balloon-date-month {
+    font-size: .7em;
+    position: relative;
+    top: -10px;
+}
+
+#timeline .timeline-badge.timeline-filter-movement {
+    background-color: #ffffff;
+    font-size: 1.7em;
+    height: 35px;
+    margin-left: -18px;
+    width: 35px;
+    top: 40px;
+}
+
+#timeline .timeline-badge.timeline-filter-movement a span {
+    color: #4997cd;
+    font-size: 1.3em;
+    top: -1px;
+}
+
+#timeline .timeline-badge.timeline-future-movement {
+    background-color: #ffffff;
+    height: 60px;
+    width: 60px;
+    font-size: 1.7em;
+    top: -10px;
+    margin-left: -31px;
+    border: 2px solid #4997cd;
+}
+
+#timeline .timeline-badge.timeline-future-movement p {
+    color: #1782cc;
+    position: absolute;
+    top: 10px;
+    left: 4px;
+}
+
+#timeline .timeline-badge.timeline-future-movement a span {
+    color: #4997cd;
+    font-size: .9em;
+    top: 0;
+    left: 1px;
+}
+
+#timeline .timeline-movement {
+    /*   border-bottom: dashed 1px #4997cd; */
+    position: relative;
+    margin-bottom: 10rem;
+}
+
+#timeline .timeline-movement.timeline-movement-top {
+    height: 60px;
+}
+
+#timeline .timeline-movement .timeline-item {
+    padding: 20px 0px;
+}
+
+#timeline .timeline-movement .timeline-item .timeline-panel {
+    border: 1px solid #d4d4d4;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    color: #666;
+    padding: 10px;
+    position: relative;
+    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+
+#timeline .timeline-movement .timeline-item .timeline-panel .timeline-panel-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#timeline .timeline-movement .timeline-item .timeline-panel.credits .timeline-panel-ul .lefting-wrap {
+    float: right;
+    width: 30%;
+    height: 130px;
+    background-color: floralwhite;
+}
+
+#timeline .timeline-movement .timeline-item .timeline-panel.credits .timeline-panel-ul .righting-wrap {
+    float: left;
+    width: 70%;
+    height: 130px;
+    padding: 0 12px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#timeline .timeline-movement .timeline-item .timeline-panel.credits .timeline-panel-ul li {
+    color: #666;
+    width: 100%;
+}
+
+.clear {
+    clear: both;
+}
+
+#timeline .timeline-movement .timeline-item .timeline-panel.debits .timeline-panel-ul .lefting-wrap {
+    float: left;
+    width: 30%;
+    height: 130px;
+    background-color: floralwhite;
+}
+
+#timeline .timeline-movement .timeline-item .timeline-panel.debits .timeline-panel-ul .righting-wrap {
+    float: right;
+    width: 70%;
+    height: 130px;
+    padding: 0 0 0 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#timeline .timeline-movement .timeline-item .timeline-panel.debits .timeline-panel-ul li.img-wraping {
+    width: 100%;
+}
+
+#timeline .timeline-movement .timeline-item .timeline-panel.debits .timeline-panel-ul li.img-wraping a img, #timeline .timeline-movement .timeline-item .timeline-panel.credits .timeline-panel-ul li.img-wraping a img {
+    width: 100%;
+    height: 130px;
+}
+
+#timeline .timeline-movement .timeline-item .timeline-panel.debits .timeline-panel-ul li {
+    color: #666;
+    width: 100%;
+}
+
+#timeline .timeline-movement .timeline-item .timeline-panel.credits .timeline-panel-ul li a.importo {
+    color: #468c1f;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+#timeline .timeline-movement .timeline-item .timeline-panel.debits .timeline-panel-ul {
+    text-align: left;
+}
+
+#timeline .timeline-movement .timeline-item .timeline-panel.debits .timeline-panel-ul a.importo {
+    color: #e2001a;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+/**************Who View Your Profile CSS End Here****************/
+/* The Modal (background) */
+.ESPERE {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1000000;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.ESPERE-CONTENT {
+    background-color: #ffffff00;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ffffff00;
+    width: 50%;
+    height: 30%;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+.infocontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 90%;
+    height: 90%;
+}
+
+.container {
+    width: 100%;
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 10000;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    padding-top: 0;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 2% auto 15% auto;
+    /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 60%;
+    /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 15px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    cursor: pointer;
+}
+
+.close:hover img.avatar {
+    filter: brightness(0.3);
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+
+    .cancelbtn {
+        width: 100%;
+    }
+}
+
+.container-box {
+    /*cursor: pointer;*/
+    position: relative;
+    width: 100%;
+}
+
+.image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: 80px;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.container-box:hover .image {
+    filter: brightness(0.3);
+}
+
+.container-box:hover .middle {
+    opacity: 1;
+}
+
+.text {
+    color: white;
+    font-size: 32px;
+    padding: 8px 16px;
+}
+
+.contenedor {
+    z-index: 10000;
+    float: right;
+    top: 190px;
+    right: 10px;
+    position: relative;
+    background-color: #fff;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: right;
+    align-content: space-around;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(0, 0, 0, 0.2);
+}
+
+.celda {
+    position: relative;
+    height: 19px;
+    width: 19px;
+    background-color: transparent;
+    border-radius: 50%;
+}
+
+.arrow {
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0 solid rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#min-menu {
+    width: auto;
+    position: absolute;
+    background-color: #fff;
+    border: 0.2px solid #bbb;
+    z-index: 200000;
+    -webkit-box-shadow: 10px 10px 5px -10px rgba(0, 0, 0, 0.43);
+    -moz-box-shadow: 10px 10px 5px -10px rgba(0, 0, 0, 0.43);
+    box-shadow: 10px 10px 5px -10px rgba(0, 0, 0, 0.43);
+}
+
+#data-panel {
+    padding-top: 0%;
+    float: right !important;
+    overflow: auto;
+    background: white;
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    z-index: 200000;
+    border: 0.2px solid #bbb;
+    -webkit-box-shadow: -19px 0px 21px -13px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: -19px 0px 21px -13px rgba(0, 0, 0, 0.16);
+    box-shadow: -19px 0px 21px -13px rgba(0, 0, 0, 0.16);
+    right: 0;
+}
+
+/* Create three equal columns that floats next to each other */
+.column-a {
+    float: left;
+    width: 45%;
+    padding: 0px;
+    height: 170px;
+    /* Should be removed. Only for demonstration */
+}
+
+/* Create three equal columns that floats next to each other */
+.column-b {
+    float: left;
+    width: 20%;
+    padding: 0px;
+    height: 170px;
+    /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*** CARGANDO ESTILO DE CAPAS ***/
+/**
+ * Create the loop delay with
+ * the extra keyframes
+ */
+@-webkit-keyframes moveup {
+    0%, 60%, 100% {
+        -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(0);
+        transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(0);
+    }
+
+    25% {
+        -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(2em);
+        transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(2em);
+    }
+}
+
+@keyframes moveup {
+    0%, 60%, 100% {
+        -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(0);
+        transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(0);
+    }
+
+    25% {
+        -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(2em);
+        transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(2em);
+    }
+}
+
+@-webkit-keyframes movedown {
+    0%, 60%, 100% {
+        -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(0);
+        transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(0);
+    }
+
+    25% {
+        -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(-2em);
+        transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(-2em);
+    }
+}
+
+@keyframes movedown {
+    0%, 60%, 100% {
+        -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(0);
+        transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(0);
+    }
+
+    25% {
+        -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(-2em);
+        transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg) translateZ(-2em);
+    }
+}
+
+/**
+ * Square layer styles
+ */
+.layer {
+    display: block;
+    position: absolute;
+    height: 5em;
+    width: 5em;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.4);
+    -webkit-transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg);
+    transform: rotateX(50deg) rotateY(0deg) rotateZ(45deg);
+}
+
+.layer:nth-of-type(1) {
+    background: #B38E5D;
+    margin-top: 3em;
+    -webkit-animation: movedown 1s cubic-bezier(0.39, 0.575, 0.565, 1) 0.45s infinite normal;
+    animation: movedown 1s cubic-bezier(0.39, 0.575, 0.565, 1) 0.45s infinite normal;
+}
+
+.layer:nth-of-type(1):before {
+    content: '';
+    position: absolute;
+    margin-left: -50%;
+    width: 85%;
+    height: 85%;
+    background: #A18054;
+}
+
+.layer:nth-of-type(2) {
+    background: #621132;
+    margin-top: 1.5em;
+}
+
+.layer:nth-of-type(3) {
+    background: rgba(19, 50, 43, 0.8);
+    -webkit-animation: moveup 1s cubic-bezier(0.39, 0.575, 0.565, 1) infinite normal;
+    animation: moveup 1s cubic-bezier(0.39, 0.575, 0.565, 1) infinite normal;
+}
+
+.container-load {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

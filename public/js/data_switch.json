@@ -1,0 +1,17 @@
+[
+    {
+        "Nombre": "FLAG_MAPBOX",
+        "Descripcion": "Bandera para cargar libreria mapbox",
+        "Valor": "1"
+    },
+    {
+        "Nombre": "FLAG_LEAFLET",
+        "Descripcion": "Bandera para cargar libreria leaflet",
+        "Valor": "0"
+    },
+    {
+        "Nombre": "PERIOD_MAP",
+        "Descripcion": "Parametro para el periodo de los archivos a cargar",
+        "Valor": "201909"
+    }
+]
